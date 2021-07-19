@@ -8,13 +8,88 @@
 </head>
 <body>
     <script>
+        function randomNumber() {
+            // Takes random number (0-1), *100 then truncates.
+            let randomStart = Math.random()*100;
+            let randomSelector = Math.trunc(randomStart);
+            return randomSelector;
+        }
+
+        function computerPlay () {
+            // Computer randomly generates either rock, paper or scissors
+            let randomSelector = randomNumber();
+            // If between 0-33, Rock. If 34-66, Paper. If 67-100, Scissors.
+            if (randomSelector  <= 33) {
+                return "rock";
+            } else if (randomSelector <= 66) {
+                return "paper";
+            } else {
+                return "scissors";
+            }
+        }
+
+        function singleRound() {
         // Player inputs rock, paper, or scissors
         // Input is assigned to player variable
-        // Computer randomly generates either rock, paper or scissors
-        // Computer value is assigned to computer variable
-        // Both values are compared via if statements. If rock, loses to paper and wins to scissors.
-        // Output winning/losing/draw message.
+        // Player input is changed to all lower case for case-insensitivity.
+        let playerInput = prompt("Choose Rock, Paper, or Scissors!", "");
+        let finalPlayerInput = playerInput.toLowerCase();
+        console.log(finalPlayerInput);
+        // Computer function value is assigned to computer variable
+        let computerInput = computerPlay();
+        // Both values are compared via if statements. If rock, loses to paper and wins to scissors. Also, return error if input is not any of the three.
+        // Return winning/losing/draw message.
+        if (finalPlayerInput === "rock") {
+            console.log("You chose " + finalPlayerInput + "!");
+        
+            if (computerInput === "rock") {
+                return "The computer chose Rock, it's a tie!";
+            } else if (computerInput === "paper") {
+                return "The computer chose Paper, you lose!";
+            }
+            else if (computerInput === "scissors") {
+                return "The computer chose Scissors, you win!";
+            }
+        } else if (finalPlayerInput === "paper") {
+            console.log("You chose " + finalPlayerInput + "!");
+
+            if (computerInput === "rock") {
+                return "The computer chose Rock, you win!";
+            } else if (computerInput === "paper") {
+                return "The computer chose Paper, it's a tie!";
+            }
+            else if (computerInput === "scissors") {
+                return "The computer chose Scissors, you lose!";
+            }
+        } else if (finalPlayerInput === "scissors") {
+            console.log("You chose " + finalPlayerInput + "!");
+
+            if (computerInput === "rock") {
+                return "The computer chose Rock, you lose!";
+            } else if (computerInput === "paper") {
+                return "The computer chose Paper, you win!";
+            }
+            else if (computerInput === "scissors") {
+                return "The computer chose Scissors, it's a tie!";
+            }
+        } else {
+            console.log("You chose ???");
+            return "You can't even type rock, paper, or scissors properly? That's an automatic fail!"
+        }
+        
+        }
+        
+        function game() {
         // Call the function 5 times to avoid loops (for now)
+        console.log(singleRound());
+        console.log(singleRound());
+        console.log(singleRound());
+        console.log(singleRound());
+        console.log(singleRound());
+        }
+
+    game();
+        
     </script>
 </body>
 </html>
