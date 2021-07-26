@@ -1,0 +1,66 @@
+body {
+    text-align: center;
+}
+
+h1{
+    font-size: 80px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+button {
+    width: 300px;
+    height: 300px;
+    display: inline;
+}
+
+.play-div {
+    width: 300px;
+    margin-right: 10%;
+    position: relative;
+    top: 300px;
+    left: 41%;
+    align-self: center;
+}
+
+.play-icons {
+    width: 100%;
+}
+
+#main-container {
+    display: grid;  
+    justify-content: center;
+}
+
+#score-div {
+    text-align: center;
+    position: fixed;
+    left: 40%;
+}
+
+#playing-container {
+    position: fixed;
+    display: flex;
+}
+
+#top-container {
+    position: fixed;
+}
+
+#rock-div {
+    margin-left: 5%;
+}
+
+#results-div {
+    position: fixed;
+    width: 800px;
+    top: 14%;
+    left: 30%;
+    text-align: center;
+    align-self: center;
+}
